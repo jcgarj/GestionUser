@@ -1,0 +1,78 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <!--<div class="panel-btns">
+            <a href="" class="panel-close">&times;</a>
+            <a href="" class="minimize">&minus;</a>
+        </div>-->
+        <h3 class="panel-title">Usuarios</h3>
+        <!--<p>Descripcion</p>-->
+    </div>
+    <div class="panel-body">
+        <!--<h5 class="subtitle mb5">Subtitulo</h5>
+        <p class="m20">SubDescripcion</p>
+        <br />-->
+        <a href="{{ path('usuario_new') }}" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;Nuevo</a>
+        <hr>
+        <div class="table-responsive">
+            <table class="records_list table table-striped" id="table1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        {#<th>Contraseña</th>#}
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Fecha de Ingreso</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for entity in entities %}
+                    <tr class="odd gradeX">
+                        <td><a href="{{ path('usuario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                        <td>{{ entity.username }}</td>
+                        {#<td>{{ entity.password }}</td>#}
+                        <td>{{ entity.email }}</td>
+                        <td>{{ entity.rol|join }}</td>
+                        <td>{{ entity.fechaingreso }}</td>
+                        <td>
+                        <a href="{{ path('usuario_show', { 'id': entity.id }) }}">Ver</a> | 
+                        <a href="{{ path('usuario_edit', { 'id': entity.id }) }}">Editar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div><!-- table-responsive -->
+    </div><!-- panel-body -->
+</div><!-- panel -->
+
+{% endblock %}
+
+
+{% block css %}
+<link href="{{ asset('bundles/app/css/jquery.datatables.css') }}" rel="stylesheet">
+{% endblock %}
+
+
+{% block js %}
+<script src="{{ asset('bundles/app/js/jquery.datatables.min.js') }}"></script>
+<script src="{{ asset('bundles/app/js/select2.min.js') }}"></script>
+<script>
+    $(document).ready(function(){
+    $('#table1').DataTable({
+        "sPaginationType": "full_numbers"
+    });
+
+    // Select2
+    $('select').select2({
+        minimumResultsForSearch: -1
+    });
+    
+});
+</script>
+{% endblock %}

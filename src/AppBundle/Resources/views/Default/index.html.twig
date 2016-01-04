@@ -1,0 +1,172 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+	<!-- begin:slider -->
+	<div id="home">
+		<div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#home-slider" data-slide-to="0" class="active"></li>
+			<li data-target="#home-slider" data-slide-to="1"></li>
+			<li data-target="#home-slider" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="{{ asset('bundles/app/img/Slider_1.png') }}" style="min-width:100%;min-height:100%;" alt="slider">
+				{#<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="carousel-content">
+							<h3 class="animated fadeInUpBig text-left">Gestión se adapta a cualquier nicho de mercado.</h3>
+								<p class="animated rollIn text-left">Dirigido para pequeñas y medianas empresas.</p>
+							</div>
+						</div> 
+					</div>
+				</div>#}
+			</div>
+			<div class="item">
+				<img src="{{ asset('bundles/app/img/Slider_2.png') }}" style="min-width:100%;min-height:100%;" alt="slider">
+				{#<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="carousel-content">
+								<h3 class="animated fadeInLeftBig text-left">CFDI, acorde a lo establecido por el SAT</h3>
+							<p class="animated fadeInDownBig text-left">Para facturación eletrónica y nómina.</p>
+							</div>
+						</div>
+					</div>
+				</div>#}
+			</div>
+			<div class="item">
+				<img src="{{ asset('bundles/app/img/Slider_3.png') }}" style="min-width:100%;min-height:100%;" alt="slider">
+				{#<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="carousel-content">
+								<h3 class="animated fadeInDownBig text-left">Disponibilidad: 24x7 los 365 días del año</h3>
+							<p class="animated fadeInLeftBig text-left">Toda tu información almacenada en la nube.</p>
+							</div>
+						</div>
+					</div>
+				</div>#}
+			</div>
+		</div>
+		<a class="left carousel-control" href="#home-slider" data-slide="prev">
+			<i class="fa fa-angle-left"></i>
+		</a>
+		<a class="right carousel-control" href="#home-slider" data-slide="next">
+			<i class="fa fa-angle-right"></i>
+		</a>
+		{#<div class="pattern"></div>#}
+		</div>
+
+	</div>
+	<!-- end:slider -->
+
+
+	<!-- begin:featured -->
+	<div id="featured">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="heading-title">
+						<h2>Nuestros productos</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-4" style="height:320px;">
+					<div class="featured-container">
+					<a href="{{ path('admin_admin_show', { 'id': 1 }) }}">
+						<div class="featured-photos">
+							<i class="fa fa-dollar"></i>
+						</div>
+						<h3>Control de ventas</h3>
+					</a>	
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4" style="height:320px;">
+					<div class="featured-container">
+					<a href="{{ path('admin_admin_show', { 'id': 3 }) }}">
+						<div class="featured-photos">
+							<i class="fa fa-file-o"></i>
+						</div>
+						<h3>Control de gastos</h3>
+					</a>	
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4" style="height:320px;">
+					<div class="featured-container">
+					<a href="{{ path('admin_admin_show', { 'id': 4 }) }}">
+						<div class="featured-photos">
+							<i class="fa fa-archive"></i>
+						</div>
+						<h3>Control de inventarios</h3>
+					</a>	
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4" style="height:320px;">
+					<div class="featured-container">
+					<a href="{{ path('admin_admin_show', { 'id': 5 }) }}">
+						<div class="featured-photos">
+							<i class="fa fa-users"></i>
+						</div>
+						<h3>Contabilidad electronica</h3>
+					</a>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4" style="height:320px;">
+					<div class="featured-container">
+					<a href="{{ path('admin_admin_show', { 'id': 6 }) }}">
+						<div class="featured-photos">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+						<h3>Administra tu tienda en linea</h3>
+					</a>	
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4" style="height:320px;">
+					<div class="featured-container">
+					<a href="{{ path('admin_admin_show', { 'id': 7 }) }}">
+						<div class="featured-photos">
+							<i class="fa fa-files-o"></i>
+						</div>
+						<h3>Recibos de nomina</h3>
+					</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end:featured -->
+
+	<div class="page-content contact">
+		<div class="container">
+
+			<div class="row padd20-top-btm">
+				<div class="col-md-12 text-center">
+					<h3>Nuestros clientes</h3>
+					<div class="row">
+						<div class="col-sx-12 col-sm-15">
+							<img src="{{ asset('bundles/app/img/Cliente_Andamios.png') }}" alt="">
+						</div>
+						<div class="col-sx-12 col-sm-15">
+							<img src="{{ asset('bundles/app/img/Cliente_CristaFacil.png') }}" alt="">
+						</div>
+						<div class="col-sx-12 col-sm-15">
+							<img src="{{ asset('bundles/app/img/Cliente_Dicipa.png') }}" alt="">
+						</div>
+						<div class="col-sx-12 col-sm-15">
+							<img src="{{ asset('bundles/app/img/Cliente_Gabin.png') }}" alt="">
+						</div>
+						<div class="col-sx-12 col-sm-15">
+							<img src="{{ asset('bundles/app/img/Cliente_ParabrisasCitsa.png') }}" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo rm -fr app/cache/*
+sudo rm -fr app/logs/*

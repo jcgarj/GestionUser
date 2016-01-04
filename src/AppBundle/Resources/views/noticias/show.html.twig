@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div id="featured" style="margin-top: 100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-left">
+                    <h2>{{ entity.titulo }}</h2>
+                    <img src="{{ asset(entity.imgDestacada) }}" alt="{{ entity.imgDestacada }}" width="100%">
+                    <p>{{ entity.contenido | raw }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

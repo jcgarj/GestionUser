@@ -1,0 +1,122 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<!--<div class="panel-btns">
+			<a href="" class="panel-close">&times;</a>
+			<a href="" class="minimize">&minus;</a>
+		</div>-->
+		<h3 class="panel-title">Editar Usuario</h3>
+		<!--<p>Descripcion</p>-->
+	</div>
+
+	<div class="panel-body">
+		<!--<h5 class="subtitle mb5">Subtitulo</h5>
+		<p class="m20">SubDescripcion</p>
+		<br />-->
+
+		{{ form_start(edit_form) }}
+		{{ form_errors(edit_form) }}
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Nombre de usuario</label>
+			<div class="col-sm-6">
+				{{ form_widget(edit_form.username, {'attr': {'class': 'form-control input-sm'}}) }}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Correo</label>
+			<div class="col-sm-6">
+				{{ form_widget(edit_form.email, {'attr': {'class': 'form-control input-sm'}}) }}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Contraseña</label>
+			<div class="col-sm-6">
+				{{ form_widget(edit_form.password, {'attr': {'class': 'form-control input-sm'}}) }}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Rol</label>
+			<div class="col-sm-6">
+				{{ form_widget(edit_form.rol, {'attr': {'class': 'form-control input-sm'}}) }}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Call Center</label>
+			<div class="col-sm-6">
+				{{ form_widget(edit_form.callcenter, {'attr': {'class': 'form-control input-sm'}}) }}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Extension</label>
+			<div class="col-sm-6">
+				{{ form_widget(edit_form.extension, {'attr': {'class': 'form-control input-sm'}}) }}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Fecha de Ingreso</label>
+			<div class="col-sm-6">
+				{{ form_widget(edit_form.fechaingreso, {'attr': {'class': 'form-control input-sm'}}) }}
+			</div>
+		</div>
+
+
+		{{ form_widget(edit_form._token) }}
+
+		<div class="inline">
+			<a class="btn btn-success" id="validarDatos"><i class="fa fa-plus"></i>&nbsp;Guardar</a>
+			<button class="btn btn-success ocultar" type="submit" id="sendform"><i class="fa fa-plus"></i>&nbsp;Crear</button>
+			<a class="btn btn-warning" href="{{ path('usuario') }}"><i class="fa fa-arrow-left">&nbsp;</i>Regresar</a>
+		</div>
+
+	</div><!-- panel-body -->
+</div><!-- panel -->
+{% endblock %}
+
+
+{% block js %}
+<script src="{{ asset('bundles/app/js/jquery.maskedinput.min.js') }}"></script>
+<script>
+$(document).ready(function(){
+	$("#appbundle_usuario_extension").mask("9999");
+	$("#appbundle_usuario_fechaingreso").mask("99/99/9999");
+	$('#appbundle_usuario_email').change(function() {
+		var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+		if (regex.test($('#appbundle_usuario_email').val().trim())) {
+			//Correo valido
+		} else {
+			alert('Correo inválido');
+			$('#appbundle_usuario_email').focus();
+		}
+	});
+
+
+	if ($("#appbundle_usuario_rol").val() == "ROLE_CALL_ADMIN") {
+			$('#appbundle_usuario_callcenter').attr('disabled', 'disabled');
+	}
+	$("#appbundle_usuario_rol").change(function(){
+		if ($(this).val() == "ROLE_CALL_ADMIN") {
+			$('#appbundle_usuario_callcenter').attr('disabled', 'disabled');
+		}
+		else{
+			$('#appbundle_usuario_callcenter').removeAttr('disabled');
+		}
+	});
+	// Validacion de datos
+	$("#validarDatos").click(function() {
+		if ($("#appbundle_usuario_rol").val() == "ROLE_CALL_ADMIN") {
+			$('#appbundle_usuario_callcenter').val("none");
+		}
+		$("#sendform").click();
+	});
+});
+</script>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Iniciar Sesion - Gestión</title>
+</head>
+<body id="login">
+	<div class="login-panel">
+		<form method="post" action="{{ path('login_check') }}">
+			<img src="{{ asset('bundles/app/img/logo.png') }}" alt="logo" id="logo">
+			<input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Correo" class="form-control uname"/>
+			<input type="password" id="password" name="_password" placeholder="Contraseña" class="form-control pword"/>
+			{% if error %}
+			<div style="color:red;">{{ error.message }}</div>
+			{% endif %}
+			<button class="btn btn-success btn-block">Entrar</button>
+		</form>
+	</div>
+</body>
+<style>
+#login{
+	background: #F5F5F5;
+	color: #333333;
+	font-family: sans-serif;
+	font-size: 15px;
+}
+#login .login-panel .title{
+	font-size: 19px;
+}
+#login .login-panel #logo{
+	width: 90%;
+	margin: 0 auto 30px auto;
+}
+#login .login-panel{
+	margin: 100px auto 0px auto;
+	background: #ffffff;
+	max-width: 300px;
+	border: 1px red;
+	padding: 20px;
+	border-top: 5px solid #ffcb3d;
+}
+#login .login-panel input{
+	background: #F5F5F5;
+	border: none;
+	width: 93%;
+	padding: 10px;
+	margin: 3px auto;
+	border-radius: 4px;
+}
+#login .login-panel button{
+	background: #ffcb3d;
+	width: 100%;
+	margin: 10px auto;
+	border: none;
+	padding: 10px;
+}
+</style>
+</html>

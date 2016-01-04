@@ -1,0 +1,20 @@
+AppBundle\Entity\pagina:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titulo:
+            type: string
+            length: '80'
+        contenido:
+            type: text
+        imagen:
+            type: string
+            length: '120'
+            nullable: true
+    lifecycleCallbacks: {  }

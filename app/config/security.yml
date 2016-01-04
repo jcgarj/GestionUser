@@ -1,0 +1,76 @@
+security:
+    encoders:
+        AppBundle\Entity\Usuario: 
+            algorithm: plaintext
+            #algorithm: bcrypt
+            #cost : 7
+        Symfony\Component\Security\Core\User\User: plaintext
+#            algorithm: bcrypt
+#            cost : 7
+
+    role_hierarchy:
+        ADMINISTRADOR:       ROLE_USER    # Administrador
+        USUARIO:       ROLE_USER    # Usuario
+        PROGRAMADOR: [ROLE_ADMIN, ROLE_USER, ROLE_ALLOWED_TO_SWITCH]    # Programador
+
+    providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, Usuario]
+        in_memory:
+            memory:
+                users:
+                    # NOTA: UNA VEZ PUESTO EL PROYECTO EN PRODUCCION, NO SE DEBE CAMBIAR NINGUNO DE LOS VALORES SIGUIENTES:
+                    admin:
+                        password: 'dev'
+                        #dev
+                        roles: 'ADMINISTRADOR'
+                    developer:
+                        password: 'dev'
+                        roles: 'PROGRAMADOR'
+        Usuario:
+            entity:
+                class: AppBundle:Usuario
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+            security: false
+
+        login:
+            pattern: ^/login$
+            security: false
+
+        login_firewall:
+            pattern: ^/login$
+            anonymous: ~
+
+        secured_area:
+            pattern: ^/
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
+            logout:
+                path: /logout
+                target: /login
+            remember_me:
+                key: thissecuresystem
+                lifetime: 1800
+
+        main:
+            http_basic: ~
+            stateless: true
+
+        default:
+            pattern: ^/
+            http_basic: ~
+            provider: Usuario
+            #anonymous: ~
+    access_control:
+    # NOTA: LAS RESTRICCIONES DE ACCESO TAMBIÉN ESTÁN DECLARADAS EN LOS CONTROLADORES
+    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/pagina/admin, roles: ROLE_USER }
+    - { path: ^/admin, roles: ROLE_USER }
+

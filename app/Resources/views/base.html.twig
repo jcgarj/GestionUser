@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta name="description" content="Sistema administrativo empresarial de compras, ventas, facturación, entradas y salidas de las PyMEs.">
+	<meta name="keywords" content="">
+	<meta name="author" content="DSCORP S.A DE C.V.">
+	<link rel="shortcut icon" href="{{ asset('bundles/app/img/favicon.ico') }}">
+
+	<title>{% block title %}Gestión{% endblock %}</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="{{ asset('bundles/app/css/bootstrap.css') }}" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="{{ asset('bundles/app/css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('bundles/app/css/responsive.css') }}" rel="stylesheet">
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Advent+Pro);
+		@font-face {
+			font-family: Arial_Narrow;
+			src: url({{ asset('bundles/app/fonts/arial-narrow.ttf') }});
+		}
+		h1,h2,h3,h4,h5,h6{
+			font-family: 'Advent Pro', sans-serif;
+		}
+		body{
+			font-family: 'Arial_Narrow', sans-serif;
+			font-size: 17px;
+		}
+</style>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="{{ asset('bundles/app/js/html5shiv.js') }}"></script>
+		<script src="{{ asset('bundles/app/js/respond.min.js') }}"></script>
+	<![endif]-->
+	{% block css %}{% endblock %}
+	</head>
+
+	<body>
+	
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand visible-xs" href="{{ path('index') }}">Inicio</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav nav-left">
+				<li class="hidden-xs"><a href="{{ path('index') }}"><img src="{{ asset('bundles/app/img/logo.png') }}" alt="logo" style="margin:0;padding:0;height:40px"></a></li>
+			</ul>
+			<ul class="nav navbar-nav nav-right">
+				<li><a href="{{ path('login') }}">Ingreso a Gestión</a></li>
+			</ul>
+			<ul class="nav navbar-nav nav-right">
+				<li><a href="{{ path('acercade') }}">Acerca de Gestión</a></li>
+				<li><a href="{{ path('servicios') }}">Servicios</a></li>
+				<li><a href="{{ path('paquetes') }}">Paquetes</a></li>
+				<li><a href="{{ path('beneficios') }}">Beneficios</a></li>
+				<li><a href="{{ path('soporte') }}">Soporte</a></li>
+				<li><a href="{{ path('noticias') }}">Noticias</a></li>
+				<li><a href="{{ path('contacto') }}">Contactanos</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	{% block body %}{% endblock %}
+
+	<!-- begin:footer -->
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-sm-4" style="c">
+							<ul class="text-left list-unstyled " >
+								<li><a href="{{ path('admin_admin_show', { 'id': 8 }) }}" style="color: #fff">Preguntas frecuentes</a></li>
+								<li><a href="{{ path('paquetes') }}" style="color: #fff">Venta por timbres</a></li>
+								<li><a href="{{ path('paquetes') }}#gststandar" style="color: #fff">Venta por renta</a></li>
+								<li><a href="{{ path('admin_admin_show', { 'id': 9 }) }}" style="color: #fff">Aviso de privacidad</a></li>
+							
+							</ul>
+						</div>
+						<div class="col-sm-4">
+							<img src="{{ asset('bundles/app/img/Firma_HD.png') }}" alt="Firma_HD" width="100%">
+						</div>
+						<div class="col-sm-4">
+							<h3>Visita nuestras redes sociales</h3>
+							<ul class="list-unstyled list-inline ">
+								<li>
+									<a href="https://www.facebook.com/gestionglo" rel="tooltip" title="Facebook" class="icon-facebook">
+										<img src="{{ asset('bundles/app/img/icon_fb.png') }}" alt="Firma_HD" width="40px">
+									</a>
+								</li>
+								<li>
+									<a href="https://twitter.com/gestionglo" rel="tooltip" title="Twitter" class="icon-twitter">
+										<img src="{{ asset('bundles/app/img/icon_tw.png') }}" alt="Firma_HD" width="40px">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end:footer -->
+	
+	<!-- begin:copyright -->
+	<div id="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<small>Copyright &copy; 2015 Gestión Todos los derechos reservados. Gestión fue desarollado en la empresa DSCORP S.A DE C.V.</small>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end:copyright -->
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="{{ asset('bundles/app/js/jquery.js') }}"></script>
+	<script src="{{ asset('bundles/app/js/bootstrap.js') }}"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=en"></script>
+	<script src="{{ asset('bundles/app/js/gmap3.js') }}"></script>
+	<script src="{{ asset('bundles/app/js/script.js') }}"></script>
+
+	{% block js %}{% endblock %}
+
+	</body>
+</html>

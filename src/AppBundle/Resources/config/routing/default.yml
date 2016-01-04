@@ -1,0 +1,36 @@
+index:
+    path:     /
+    defaults: { _controller: "AppBundle:Default:index"}
+
+acercade:
+    path:     /acercade
+    defaults: { _controller: "AppBundle:Default:acercade"}
+
+servicios:
+    path:     /servicios
+    defaults: { _controller: "AppBundle:Default:servicios"}
+
+paquetes:
+    path:     /paquetes
+    defaults: { _controller: "AppBundle:Default:paquetes"}
+
+beneficios:
+    path:     /beneficios
+    defaults: { _controller: "AppBundle:Default:beneficios"}
+
+soporte:
+    path:     /soporte
+    defaults: { _controller: "AppBundle:Default:soporte"}
+
+#noticias:
+#    path:     /noticias
+#    defaults: { _controller: "AppBundle:Default:noticias"}
+
+contacto:
+    path:     /contacto
+    defaults: { _controller: "AppBundle:Default:contacto"}
+
+contacto_enviar:
+    path:     /contacto_enviar
+    defaults: { _controller: "AppBundle:Default:contactoEnviar"}
+    methods:  POST

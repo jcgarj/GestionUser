@@ -1,0 +1,75 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<!-- begin:heading -->
+	<div class="heads" style="background: url('{{asset('bundles/app/img/Seccion_Contactanos.png') }}') center center;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2> Contacto</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end:heading -->
+
+	<!-- begin:contact -->
+	<div class="page-content contact">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h3>No dude en contactarnos para cualquier duda o aclaración</h3>
+				</div>
+			</div>
+			<div class="row padd20-top-btm">
+				{% if msj is defined %}{{ msj }}{% endif %}
+				<form method="post" action="{{ path('contacto_enviar') }}">
+					<div class="col-md-5 col-sm-5">
+						<h3>Deja tu mensaje</h3>
+						<input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+						<input type="email" name="correo" class="form-control" placeholder="Correo" required>
+						<input type="text" name="telefono" class="form-control" placeholder="Telefono">
+						<input type="text" name="empresa" class="form-control" placeholder="Empresa">
+					</div>
+					<div class="col-md-7 col-sm-7">
+						<input type="text" name="asunto" class="form-control" placeholder="Asunto" required>
+						<textarea name="mensaje" class="form-control" rows="7" placeholder="Escribe tu mensaje" required></textarea>
+						<input type="submit" name="submit" value="Enviar" class="btn btn-warning btn-block btn-lg">
+					</div>
+				</form>
+			</div>
+	</div>
+
+
+		<div class="row">
+			<div class="col-md-7">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.5131646485493!2d-99.1361539!3d19.390221500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fef84c5d0da5%3A0xf06fa2b112e84531!2sPedro+Santacilia%2C+Iztaccihuatl%2C+Benito+Ju%C3%A1rez%2C+Cd+de+M%C3%A9xico%2C+D.F.!5e0!3m2!1ses!2smx!4v1420923253579" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+			</div>
+			<div class="col-md-5 row">
+				<div class="col-sm-6" style="height:130px;">
+					<h3>Dirección</h3>
+					<address>
+					Dscorp S.A. de C.V. <br>
+					Pedro Santacilia 258-1 <br>
+					Col. Iztaccihualt, Del <br>
+					Benito Juárez México, Distrito Federal
+					</address>
+				</div>
+				<div class="col-sm-6 col-md-4" style="height:130px;">
+					<h3>Teléfonos</h3>
+					5579 2273 <br>
+					5698 9651 <br>
+					01 800 087 1097
+				</div>
+				<div class="col-sm-6 col-md-4" style="height:130px;">
+					<h3>Correo electronico</h3>
+					<p>miguel.ramirez@dscorp.com.mx</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- end:contact -->
+{% endblock %}

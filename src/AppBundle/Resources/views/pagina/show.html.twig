@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div id="featured" style="margin-top: 100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-left">
+                    <h2>{{ entity.titulo }}</h2>
+                    {% if var is null %}
+                        {# do something #}
+                    {% else %}
+                      <img src="{{ asset(entity.imagen) }}" alt="{{ entity.imagen }}" width="100%">
+                    {% endif %}
+                    <p>{{ entity.contenido | raw }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

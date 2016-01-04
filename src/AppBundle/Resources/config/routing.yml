@@ -1,0 +1,15 @@
+app_admin_admin:
+    resource: "@AppBundle/Resources/config/routing/pagina.yml"
+    prefix:   /pagina
+
+app_noticias:
+    resource: "@AppBundle/Resources/config/routing/noticias.yml"
+    prefix:   /noticias
+
+usuarios:
+    resource: "@AppBundle/Resources/config/routing/usuario.yml"
+    prefix:   /admin/usuario
+
+app_homepage:
+    resource: "@AppBundle/Resources/config/routing/default.yml"
+    prefix:   /

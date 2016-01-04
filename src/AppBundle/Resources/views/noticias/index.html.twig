@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <!-- begin:heading -->
+    <div class="heads" style="background: url('{{asset('bundles/app/img/Seccion_Noticias.png') }}')center center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2><span>//</span> Noticias</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end:heading -->
+
+    <div id="featured">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-left">
+                    {% for entity in entities %}
+                    <h2>{{ entity.titulo }}</h2>
+                    <div class="row">
+                        <div class="col-xs-4"><img src="{{ asset(entity.imgDestacada) }}" class="img-responsive img-rounded" alt="{{ entity.imgDestacada }}"></div>
+                        <div class="col-xs-8">
+                            <p>{{ entity.contenido |raw }}...</p>
+                             <a href="{{ path('noticias_show', { 'id': entity.id }) }}" class="btn btn-warning">Leer más</a>
+                        </div>
+
+                    </div>
+                   
+                    <hr>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

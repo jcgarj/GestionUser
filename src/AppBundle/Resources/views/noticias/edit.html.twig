@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>noticias edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('noticias') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
+
+{% block js %}
+<link href="{{ asset('bundles/app/css/redactor.css') }}" rel="stylesheet">
+<script src="{{ asset('bundles/app/js/redactor.js') }}"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#appbundle_noticias_contenido').redactor();
+    });
+</script>
+{% endblock %}
+
+{#
+{% block js %}
+	<link href="{{ asset('bundles/app/js/libs/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('bundles/app/js/bootstrap-wysihtml5-0.0.2.css') }}" rel="stylesheet">
+
+<script src="{{ asset('bundles/app/js/libs/js/wysihtml5-0.3.0_rc2.js') }}"></script>
+<script src="{{ asset('bundles/app/js/bootstrap-wysihtml5-0.0.2.js') }}"></script>
+<script type="text/javascript">
+	$('textarea').wysihtml5({
+		"font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+	"emphasis": true, //Italics, bold, etc. Default true
+	"lists": true,
+	});
+</script>
+{% endblock %}
+#}

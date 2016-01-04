@@ -1,0 +1,20 @@
+AppBundle\Entity\noticias:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        titulo:
+            type: string
+            length: 255
+        contenido:
+            type: text
+        imgDestacada:
+            type: string
+            length: 255
+            column: img_destacada
+    lifecycleCallbacks: {  }

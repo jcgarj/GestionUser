@@ -1,0 +1,30 @@
+admin_admin:
+    path:     /admin
+    defaults: { _controller: "AppBundle:pagina:index" }
+
+admin_admin_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:pagina:show" }
+
+admin_admin_new:
+    path:     /admin/new
+    defaults: { _controller: "AppBundle:pagina:new" }
+
+admin_admin_create:
+    path:     /admin/create
+    defaults: { _controller: "AppBundle:pagina:create" }
+    methods:  POST
+
+admin_admin_edit:
+    path:     /admin/{id}/edit
+    defaults: { _controller: "AppBundle:pagina:edit" }
+
+admin_admin_update:
+    path:     /admin/{id}/update
+    defaults: { _controller: "AppBundle:pagina:update" }
+    methods:  [POST, PUT]
+
+admin_admin_delete:
+    path:     /admin/{id}/delete
+    defaults: { _controller: "AppBundle:pagina:delete" }
+    methods:  [POST, DELETE]
