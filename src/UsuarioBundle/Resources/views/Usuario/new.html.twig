@@ -1,0 +1,145 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+	
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<header class="main-box-header clearfix">
+				<br><br><br>
+				<h1>Registro de Usuario</h1>
+			</header>
+		<div class="main-box-body clearfix">
+			<div role="form">
+			{{ form_start(form) }}
+			<div class="col-lg-12">
+				<div class="row">
+					<div class="form-group col-xs-4">
+						<br>
+						{{ form_errors(form.nombre)}}
+    					{{ form_widget(form.nombre, {attr: {'class':'form-control', 'placeholder':'Nombre'}})}}
+					</div>
+					<div class="form-group col-xs-4">
+						<br>
+						{{ form_errors(form.appat)}}
+    					{{ form_widget(form.appat, {attr: {'class':'form-control', 'placeholder':'Apellido Paterno'}})}}
+					</div>
+					<div class="form-group col-xs-4">
+						<br>
+						{{ form_errors(form.apmat)}}
+    					{{ form_widget(form.apmat, {attr: {'class':'form-control', 'placeholder':'Apellido Materno'}})}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-4">
+						<br>
+						{{ form_errors(form.correo)}}
+    					{{ form_widget(form.correo, {attr: {'class':'form-control', 'placeholder':'Correo'}})}}
+					</div>
+					<div class="form-group col-xs-4">
+						<br>
+						{{ form_errors(form.password.first)}}
+    					{{ form_widget(form.password.first, {attr: {'class':'form-control', 'placeholder':'Password'}})}}
+					</div>
+					<div class="form-group col-xs-4">
+						<br>
+						{{ form_errors(form.password.second)}}
+    					{{ form_widget(form.password.second, {attr: {'class':'form-control', 'placeholder':'Confirmar Password'}})}}
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="row">
+					<header class="main-box-header clearfix">
+						<h1>Datos de Facturacion</h1>
+					</header>
+				</div>
+				<div class="row">
+					<div class="form-groups col-xs-4">
+						<br>
+						{{ form_errors(form.razonsocial)}}
+    					{{ form_widget(form.razonsocial, {attr: {'class':'form-control', 'placeholder':'Razon Social'}})}}
+					</div>
+					<div class="form-groups col-xs-4">
+						<br>
+						{{ form_errors(form.rfc)}}
+    					{{ form_widget(form.rfc, {attr: {'class':'form-control', 'placeholder':'RFC'}})}}
+					</div>
+					<div class="form-groups col-xs-4">
+						<br>
+						{{ form_errors(form.rtributario)}}
+    					{{ form_widget(form.rtributario, {attr: {'class':'form-control', 'placeholder':'Regimen Tributario'}})}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-groups col-xs-4">
+						<br>
+						{{ form_errors(form.calle)}}
+    					{{ form_widget(form.calle, {attr: {'class':'form-control', 'placeholder':'Calle'}})}}
+					</div>
+					<div class="form-groups col-xs-4">
+						<br>
+						{{ form_errors(form.noext)}}
+    					{{ form_widget(form.noext, {attr: {'class':'form-control', 'placeholder':'Numero Exterior'}})}}
+					</div>
+					<div class="form-groups col-xs-4">
+						<br>
+						{{ form_errors(form.noint)}}
+    					{{ form_widget(form.noint, {attr: {'class':'form-control', 'placeholder':'Numero Interior'}})}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-groups col-xs-4">
+					<br>
+					{{ form_errors(form.colonia)}}
+    				{{ form_widget(form.colonia, {attr: {'class':'form-control', 'placeholder':'colonia'}})}}
+    				</div>
+    				<div class="form-groups col-xs-4">
+    				<br>	
+    				{{ form_errors(form.cpostal)}}
+    				{{ form_widget(form.cpostal, {attr: {'class':'form-control', 'placeholder':'Codigo Postal'}})}}
+    				</div>
+    				<div class="form-groups col-xs-4">
+    				<br>
+    				{{ form_errors(form.localidad)}}
+    				{{ form_widget(form.localidad, {attr: {'class':'form-control', 'placeholder':'Localidad'}})}}
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="form-groups col-xs-4">
+    				<br>
+    				{{ form_errors(form.telefono)}}
+    				{{ form_widget(form.telefono, {attr: {'class':'form-control', 'placeholder':'Telefono'}})}}
+    				</div>
+    				<div class="form-groups col-xs-4">
+    				<br>
+    				{{ form_errors(form.pais)}}
+    				{{ form_widget(form.pais, {attr: {'class':'form-control', 'placeholder':'Pais'}})}}
+    				</div>	
+    				<div class="form-groups col-xs-4">
+    				<br>
+    				{{ form_errors(form.estado)}}
+    				{{ form_widget(form.estado, {attr: {'class':'form-control', 'placeholder':'Estado'}})}}
+    				</div>
+    				<div class="form-groups col-xs-4">
+    				<br>
+    				{{ form_errors(form.delemuni)}}
+    				{{ form_widget(form.delemuni, {attr: {'class':'form-control', 'placeholder':'Delegacion o Municipio'}})}}
+    				</div>
+    					<div class="row">
+    						<div class="form-groups col-xs-5">
+    							{{form_widget(form._token) }}
+	    						<button class="btn btn-l">
+								<a href="{{ path('usuario_create') }}"></a>
+								Aceptar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

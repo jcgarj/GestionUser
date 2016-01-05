@@ -1,0 +1,71 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Usuario list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Appat</th>
+                <th>Apmat</th>
+                <th>Correo</th>
+                <th>Password</th>
+                <th>Salt</th>
+                <th>Razonsocial</th>
+                <th>Rfc</th>
+                <th>Rtributario</th>
+                <th>Calle</th>
+                <th>Noext</th>
+                <th>Noint</th>
+                <th>Colonia</th>
+                <th>Cpostal</th>
+                <th>Localidad</th>
+                <th>Telefono</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('usuario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.appat }}</td>
+                <td>{{ entity.apmat }}</td>
+                <td>{{ entity.correo }}</td>
+                <td>{{ entity.password }}</td>
+                <td>{{ entity.salt }}</td>
+                <td>{{ entity.razonsocial }}</td>
+                <td>{{ entity.rfc }}</td>
+                <td>{{ entity.rtributario }}</td>
+                <td>{{ entity.calle }}</td>
+                <td>{{ entity.noext }}</td>
+                <td>{{ entity.noint }}</td>
+                <td>{{ entity.colonia }}</td>
+                <td>{{ entity.cpostal }}</td>
+                <td>{{ entity.localidad }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('usuario_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('usuario_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('usuario_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

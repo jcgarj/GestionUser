@@ -1,0 +1,19 @@
+usuario_dele_muni:
+    resource: "@UsuarioBundle/Resources/config/routing/dele_muni.yml"
+    prefix:   /dele_muni
+
+usuario_pais:
+    resource: "@UsuarioBundle/Resources/config/routing/pais.yml"
+    prefix:   /pais
+
+usuario_estado:
+    resource: "@UsuarioBundle/Resources/config/routing/estado.yml"
+    prefix:   /estado
+
+usuario_usuario:
+    resource: "@UsuarioBundle/Resources/config/routing/usuario.yml"
+    prefix:   /usuario
+
+usuario_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: UsuarioBundle:Default:index }

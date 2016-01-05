@@ -1,0 +1,160 @@
+<?php
+
+namespace UsuarioBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * dele_muni
+ */
+class dele_muni
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $delemuni;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set delemuni
+     *
+     * @param string $delemuni
+     * @return dele_muni
+     */
+    public function setDelemuni($delemuni)
+    {
+        $this->delemuni = $delemuni;
+
+        return $this;
+    }
+
+    /**
+     * Get delemuni
+     *
+     * @return string 
+     */
+    public function getDelemuni()
+    {
+        return $this->delemuni;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $Usuario;
+
+    /**
+     * @var \HdCarrito\Carrito\UserCarritoBundle\Entity\pais
+     */
+    private $pais;
+
+    /**
+     * @var \HdCarrito\Carrito\UserCarritoBundle\Entity\estado
+     */
+    private $estado;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Usuario = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add Usuario
+     *
+     * @param \HdCarrito\Carrito\UserCarritoBundle\Entity\Usuario $usuario
+     * @return dele_muni
+     */
+    public function addUsuario(\HdCarrito\Carrito\UserCarritoBundle\Entity\Usuario $usuario)
+    {
+        $this->Usuario[] = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Remove Usuario
+     *
+     * @param \HdCarrito\Carrito\UserCarritoBundle\Entity\Usuario $usuario
+     */
+    public function removeUsuario(\HdCarrito\Carrito\UserCarritoBundle\Entity\Usuario $usuario)
+    {
+        $this->Usuario->removeElement($usuario);
+    }
+
+    /**
+     * Get Usuario
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsuario()
+    {
+        return $this->Usuario;
+    }
+
+    /**
+     * Set pais
+     *
+     * @param \HdCarrito\Carrito\UserCarritoBundle\Entity\pais $pais
+     * @return dele_muni
+     */
+    public function setPais(\HdCarrito\Carrito\UserCarritoBundle\Entity\pais $pais = null)
+    {
+        $this->pais = $pais;
+
+        return $this;
+    }
+
+    /**
+     * Get pais
+     *
+     * @return \HdCarrito\Carrito\UserCarritoBundle\Entity\pais 
+     */
+    public function getPais()
+    {
+        return $this->pais;
+    }
+
+    /**
+     * Set estado
+     *
+     * @param \HdCarrito\Carrito\UserCarritoBundle\Entity\estado $estado
+     * @return dele_muni
+     */
+    public function setEstado(\HdCarrito\Carrito\UserCarritoBundle\Entity\estado $estado = null)
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    /**
+     * Get estado
+     *
+     * @return \HdCarrito\Carrito\UserCarritoBundle\Entity\estado 
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+    public function __toString()
+    {
+        return $this->delemuni;
+    }
+}

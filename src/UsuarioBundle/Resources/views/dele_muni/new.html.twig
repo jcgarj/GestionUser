@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+     <div class="row">
+	<div class="col-lg-12">
+		<div class="main-box">
+			<br>
+			<header class="main-box-header clearfix">
+				<h1>Registro de Usuario</h1>
+			</header>
+		<div class="main-box-body clearfix">
+			<div role="form">
+			{{ form_start(form) }}
+			<div class="col-lg-12">
+				<div class="row">
+					<div class="form-group col-xs-4">
+						{{ form_errors(form.delemuni)}}
+    					{{ form_widget(form.delemuni, {attr: {'class':'form-control', 'placeholder':'Delegacion'}})}}
+					</div>
+				</div>
+			</div>
+				{{form_widget(form._token) }}
+	    						<button class="btn btn-l">
+								<a href="{{ path('dele_muni_create') }}"></a>
+								Aceptar
+								</button>
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+UsuarioBundle\Entity\pais:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        pais:
+            type: string
+            length: '80'
+    oneToMany:
+        estado:
+            targetEntity: UsuarioBundle\Entity\estado
+            mappedBy: pais
+        dele_muni:
+            targetEntity: UsuarioBundle\Entity\dele_muni
+            mappedBy: pais
+        Usuario:
+            targetEntity: UsuarioBundle\Entity\Usuario
+            mappedBy: pais
+    lifecycleCallbacks: {  }

@@ -1,0 +1,91 @@
+UsuarioBundle\Entity\Usuario:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '60'
+        appat:
+            type: string
+            length: '60'
+        apmat:
+            type: string
+            length: '60'
+        correo:
+            type: string
+            length: '60'
+        password:
+            type: string
+            length: '125'
+        salt:
+            type: string
+            length: '125'
+        razonsocial:
+            type: string
+            length: '120'
+        rfc:
+            type: string
+            length: '50'
+        rtributario:
+            type: string
+            length: '100'
+        calle:
+            type: string
+            length: '60'
+        noext:
+            type: integer
+        noint:
+            type: integer
+        colonia:
+            type: string
+            length: '60'
+        cpostal:
+            type: string
+            length: '30'
+        localidad:
+            type: string
+            length: '80'
+        telefono:
+            type: string
+            length: '15'
+    manyToOne:
+        pais:
+            targetEntity: UsuarioBundle\Entity\pais
+            joinTable:
+                name: pais_id
+                joinColumns:
+                    pais_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    Usuario_id:
+                        referencedColumnName: id
+            mappedBy: Usuario
+        estado:
+            targetEntity: UsuarioBundle\Entity\estado
+            joinTable:
+                name: estado_id
+                joinColumns:
+                    estado_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    Usuario_id:
+                        referencedColumnName: id
+            mappedBy: Usuario
+        dele_muni:
+            targetEntity: UsuarioBundle\Entity\dele_muni
+            joinTable:
+                name: dele_muni_id
+                joinColumns:
+                    dele_muni_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    Usuario_id:
+                        referencedColumnName: id
+            mappedBy: Usuario
+    lifecycleCallbacks: {  }

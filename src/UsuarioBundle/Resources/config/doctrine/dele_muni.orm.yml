@@ -1,0 +1,41 @@
+UsuarioBundle\Entity\dele_muni:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        delemuni:
+            type: string
+            length: '80'
+    oneToMany:
+        Usuario:
+            targetEntity: UsuarioBundle\Entity\Usuario
+            mappedBy: dele_muni
+    manyToOne:
+        pais:
+            targetEntity: UsuarioBundle\Entity\pais
+            joinTable:
+                name: pais_id
+                joinColumns:
+                    pais_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    dele_muni_id:
+                        referencedColumnName: id
+            mappedBy: dele_muni
+        estado:
+            targetEntity: UsuarioBundle\Entity\estado
+            joinTable:
+                name: estado_id
+                joinColumns:
+                    estado_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    dele_muni_id:
+                        referencedColumnName: id
+            mappedBy: dele_muni
+    lifecycleCallbacks: {  }

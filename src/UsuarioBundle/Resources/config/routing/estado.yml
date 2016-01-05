@@ -1,0 +1,30 @@
+estado:
+    path:     /
+    defaults: { _controller: "UsuarioBundle:estado:index" }
+
+estado_show:
+    path:     /{id}/show
+    defaults: { _controller: "UsuarioBundle:estado:show" }
+
+estado_new:
+    path:     /new
+    defaults: { _controller: "UsuarioBundle:estado:new" }
+
+estado_create:
+    path:     /create
+    defaults: { _controller: "UsuarioBundle:estado:create" }
+    methods:  POST
+
+estado_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "UsuarioBundle:estado:edit" }
+
+estado_update:
+    path:     /{id}/update
+    defaults: { _controller: "UsuarioBundle:estado:update" }
+    methods:  [POST, PUT]
+
+estado_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "UsuarioBundle:estado:delete" }
+    methods:  [POST, DELETE]

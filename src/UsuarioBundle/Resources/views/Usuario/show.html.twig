@@ -1,0 +1,104 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-box">
+                <header class="main-box-header clearfix">
+                    <br><br><br>
+                    <h1>Usuario</h1>
+                </header>
+                <div class="main-box-body clearfix">
+                    <div role="form">
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+      
+        
+            <tr>
+                <th>Apellido Paterno</th>
+                <td>{{ entity.appat }}</td>
+            </tr>
+        
+            <tr>
+                <th>Apellido Materno</th>
+                <td>{{ entity.apmat }}</td>
+            </tr>      
+            <tr>
+                <th>Correo</th>
+                <td>{{ entity.correo }}</td>
+            </tr>
+            <tr>
+                <th>Razon Social</th>
+                <td>{{ entity.razonsocial }}</td>
+            </tr>
+            <tr>
+                <th>RfC</th>
+                <td>{{ entity.rfc }}</td>
+            </tr>
+            <tr>
+                <th>Regimen Tributario</th>
+                <td>{{ entity.rtributario }}</td>
+            </tr>
+            <tr>
+                <th>Calle</th>
+                <td>{{ entity.calle }}</td>
+            </tr>
+            <tr>
+                <th>No. Ext</th>
+                <td>{{ entity.noext }}</td>
+            </tr>
+            <tr>
+                <th>No. Int</th>
+                <td>{{ entity.noint }}</td>
+            </tr>
+            <tr>
+                <th>Colonia</th>
+                <td>{{ entity.colonia }}</td>
+            </tr>
+            <tr>
+                <th>Codigo Postal</th>
+                <td>{{ entity.cpostal }}</td>
+            </tr>
+            <tr>
+                <th>Localidad</th>
+                <td>{{ entity.localidad }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Pais</th>
+                <td>{{ entity.pais }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ entity.estado }}</td>
+            </tr>
+            <tr>
+                <th>Delegacion/Municipio</th>
+                <td>{{ entity.delemuni }}</td>
+            </tr>   
+        </tbody>
+    </table>
+                    <div class="row">
+                        <div class="form-group col-xs-4">
+                            <button class="btn tbn-succes">
+                            <a href="{{ path('usuario_edit', { 'id': entity.id }) }}">
+                             Modificar
+                            </a>
+                             </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
